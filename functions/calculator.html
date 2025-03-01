@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator-function</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Lexend:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    * {
+      background-color: burlywood;
+      font-family: "Poppins" , sans-serif;
+    }
+    .calc {
+      display: flex;
+      align-items: center;
+      border: 2px solid black;
+      justify-content: center;
+      flex-direction: column;
+      margin: 1em;
+      padding: 1em;
+      box-shadow: 1px 5px 13px black;
+    }
+    .calc input{
+      border-radius: 10px;
+      transition: all ease 0.3s;
+      box-shadow: 1px 2px 5px;
+    }
+    input:hover{
+      background-color: rgb(179, 143, 98);
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <div class="calc">
+      <h1>Calculator</h1>
+      <input type="button" onclick="Calculator()" value="Calculate" />
+    </div>
+    <script>
+      function Calculator() {
+        let num1 = +prompt("Enter first number: ");
+        let num2 = +prompt("Enter second number: ");
+
+        let operator = prompt("Select an operation: (+,*,/,-)");
+
+        if (operator === "+") {
+          alert("Result: " + (num1 + num2));
+        } else if (operator === "-") {
+          alert("Result: " + (num1 - num2));
+        } else if (operator === "*") {
+          alert("Result: " + num1 * num2);
+        } else if (operator === "/") {
+          alert("Result: " + num1 / num2);
+        } else {
+          operator = prompt("Error! Enter a valid operator: ");
+        }
+      }
+    </script>
+  </body>
+</html>
