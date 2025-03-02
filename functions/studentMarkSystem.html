@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Marks System</title>
+  </head>
+  <body>
+    <div class="studentsystem">
+      <h1>Student Management System</h1>
+    </div>
+
+    <script>
+      function calculateTotal(mark1, mark2, mark3) {
+        var total = mark1 + mark2 + mark3;
+        return total;
+      }
+      function calculateGrade(percentage) {
+        var grade;
+        if (percentage >= 87 && percentage <= 100) {
+          return (grade = "A");
+        } else if (percentage >= 75 && percentage < 87) {
+          return (grade = "B");
+        } else if (percentage >= 60 && percentage < 75) {
+          return (grade = "C");
+        } else {
+          return (grade = "F");
+        }
+      }
+      function calculatePercentage(obtained, total) {
+        var percentage = (obtained / total) * 100;
+        return percentage;
+      }
+      function calculateAverage(mark1, mark2, mark3, subjects) {
+        var average = (mark1 + mark2 + mark3) / subjects;
+        return average;
+      }
+
+      // now calling functions
+      var name = prompt("Enter your name: ");
+      var marks1 = +prompt("Enter marks 1: ");
+      var marks2 = +prompt("Enter marks2: ");
+      var marks3 = +prompt("Enter marks3: ");
+
+      const subjects = 3;
+      var obtained;
+      var total = 300;
+      var percentage;
+      var average;
+      var grade;
+
+      obtained = calculateTotal(marks1, marks2, marks3);
+      percentage = calculatePercentage(obtained, total);
+      grade = calculateGrade(percentage);
+      average = calculateAverage(marks1, marks2, marks3, subjects);
+
+      alert(
+        "Name: " +
+          name +
+          "\nObtained Marks: " +
+          obtained +
+          "\nTotal Marks: " +
+          total +
+          "\nGrade: " +
+          grade +
+          "\nPercentage: " +
+          percentage.toFixed(2) +
+          "\nAverage Marks : " +
+          average.toFixed(2)
+      );
+    </script>
+  </body>
+</html>
